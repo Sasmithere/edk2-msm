@@ -3,7 +3,7 @@
 
   INF  Platform/EFI_Binaries/Drivers/sm6150/FontDxe/FontDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/QcomWDogDxe/QcomWDogDxe.inf
-
+  
   INF  Platform/EFI_Binaries/Drivers/sm6150/ChipInfoDxe/ChipInfoDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/SmemDxe/SmemDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/ULogDxe/ULogDxe.inf
@@ -28,7 +28,7 @@
   INF  Platform/EFI_Binaries/Drivers/sm6150/PlatformInfoDxe/PlatformInfoDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/PmicDxe/PmicDxeLa.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/ChargerExDxe/ChargerExDxe.inf
-  #INF  Platform/EFI_Binaries/Drivers/sm6150/QcomChargerDxe/QcomChargerDxeLA.inf
+  INF  Platform/EFI_Binaries/Drivers/sm6150/QcomChargerDxe/QcomChargerDxeLA.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/UsbPwrCtrlDxe/UsbPwrCtrlDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/AdcDxe/AdcDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/TsensDxe/TsensDxe.inf
@@ -42,5 +42,6 @@
   INF  Platform/EFI_Binaries/Drivers/sm6150/PILDxe/PILDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/ShmBridgeDxe/ShmBridgeDxeLA.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/ResetRuntimeDxe/ResetRuntimeDxe.inf
+  INF  Platform/EFI_Binaries/Drivers/sm6150/RNGDxe/RngDxe.inf
   
 

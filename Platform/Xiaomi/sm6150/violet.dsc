@@ -24,10 +24,10 @@
 [PcdsFixedAtBuild.common]
   gQcomTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
   gQcomTokenSpaceGuid.PcdMipiFrameBufferHeight|2340
-  gQcomTokenSpaceGuid.PcdTouchCtlrAddress|1
+  gQcomTokenSpaceGuid.PcdTouchCtlrAddress|89
   gQcomTokenSpaceGuid.PcdTouchCtlrResetPin|88
-  gQcomTokenSpaceGuid.PcdTouchCtlrIntPin|89
-  gQcomTokenSpaceGuid.PcdTouchCtlrI2cDevice|0x38
+  gQcomTokenSpaceGuid.PcdTouchCtlrIntPin|182
+  gQcomTokenSpaceGuid.PcdTouchCtlrI2cDevice|1
   
   # Simple Init
   gSimpleInitTokenSpaceGuid.PcdGuiDefaultDPI|400
