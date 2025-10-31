@@ -61,7 +61,7 @@ APRIORI DXE {
   INF  MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
   INF  MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
   
-  INF  Platform/EFI_Binaries/Drivers/sm6150/DisplayDxe/DisplayDxe.inf
+  #INF  Platform/EFI_Binaries/Drivers/sm6150/DisplayDxe/DisplayDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/QcomBds/QcomBds.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/VerifiedBootDxe/VerifiedBootDxe.inf
   INF  Platform/EFI_Binaries/Drivers/sm6150/DDRInfoDxe/DDRInfoDxe.inf
