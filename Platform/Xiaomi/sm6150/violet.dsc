@@ -13,30 +13,28 @@
 
   # Enable A/B Slot Environment
   AB_SLOTS_SUPPORT               = TRUE
+  USE_UART                       = 1
 
-  
 !include Platform/Qualcomm/sm6150/sm6150.dsc
 
+[LibraryClasses.common]
+  ShellCEntryLib|ShellPkg/Library/UefiShellCEntryLib/UefiShellCEntryLib.inf
+  
 [BuildOptions.common]
   GCC:*_*_AARCH64_CC_FLAGS = -DENABLE_SIMPLE_INIT -DENABLE_LINUX_SIMPLE_MASS_STORAGE
 
 
 [PcdsFixedAtBuild.common]
+  
   gQcomTokenSpaceGuid.PcdMipiFrameBufferWidth|1080
   gQcomTokenSpaceGuid.PcdMipiFrameBufferHeight|2340
-  gQcomTokenSpaceGuid.PcdTouchCtlrAddress|89
-  gQcomTokenSpaceGuid.PcdTouchCtlrResetPin|88
-  gQcomTokenSpaceGuid.PcdTouchCtlrIntPin|182
-  gQcomTokenSpaceGuid.PcdTouchCtlrI2cDevice|1
   
   # Simple Init
   gSimpleInitTokenSpaceGuid.PcdGuiDefaultDPI|400
 
   gRenegadePkgTokenSpaceGuid.PcdDeviceVendor|"Xiaomi"
   gRenegadePkgTokenSpaceGuid.PcdDeviceProduct|"Redmi Note 7 Pro"
-  gRenegadePkgTokenSpaceGuid.PcdDeviceCodeName|"violet"
-  
-  #gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0xFFFFFFFF
+  gRenegadePkgTokenSpaceGuid.PcdDeviceCodeName|"violet" 
 
 # Produce the highest video mode in Shell and UiApp
 [PcdsDynamicDefault.common]
@@ -48,4 +46,12 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdSetupConOutColumn|0
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutRow|0
   gEfiMdeModulePkgTokenSpaceGuid.PcdConOutColumn|0
+
+[Components.common]
+  Silicon/Qualcomm/QcomPkg/Drivers/NovatekTouchDxe/NovatekNvtTsDevice.inf
+  Silicon/Qualcomm/QcomPkg/Drivers/NovatekTouchDxe/NovatekNvtTs.inf
+  
+  
+
+
   

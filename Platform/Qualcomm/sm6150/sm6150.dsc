@@ -22,7 +22,6 @@
 
 !include Silicon/Qualcomm/QcomPkg/QcomCommonDsc.inc
 
-
 [PcdsFixedAtBuild.common]
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x080000000         # Starting address
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x180000000         # Limit to 6GB Size here
@@ -49,14 +48,16 @@
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
   gArmPlatformTokenSpaceGuid.PcdClusterCount|2
 
-  gQcomTokenSpaceGuid.PcdDebugUartPortBase|0xa88000
-
   #
   # SimpleInit
   #
   gSimpleInitTokenSpaceGuid.PcdDeviceTreeStore|0x9DA00000
   gSimpleInitTokenSpaceGuid.PcdLoggerdUseConsole|FALSE
+  
+[LibraryClasses]
 
+VariablePolicyHelperLib|MdeModulePkg/Library/VariablePolicyHelperLib/VariablePolicyHelperLib.inf
+  
 [LibraryClasses.common]
   # Ported from SurfaceDuoPkg
   AslUpdateLib|Silicon/Qualcomm/QcomPkg/Library/DxeAslUpdateLib/DxeAslUpdateLib.inf
@@ -68,6 +69,8 @@
   SOCSmbiosInfoLib|Silicon/Qualcomm/sm6150/Library/SOCSmbiosInfoLib/SOCSmbiosInfoLib.inf
 
 
-[Components.common]
+[LibraryClasses.common.DXE_RUNTIME_DRIVER]
+  VariablePolicyLib|MdeModulePkg/Library/VariablePolicyLib/VariablePolicyLibRuntimeDxe.inf
 
+[Components.common]
 

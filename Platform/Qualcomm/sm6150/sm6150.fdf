@@ -49,7 +49,7 @@ NumBlocks     = 0x700
 #
 ################################################################################
 
-0x00000000|0x00700000
+0x00000000|0x700000
 gArmTokenSpaceGuid.PcdFvBaseAddress|gArmTokenSpaceGuid.PcdFvSize
 FV = FVMAIN_COMPACT
 
@@ -68,7 +68,7 @@ FV = FVMAIN_COMPACT
 [FV.FvMain]
 BlockSize          = 0x40
 NumBlocks          = 0         # This FV gets compressed so make it just big enough
-FvAlignment        = 8         # FV alignment and FV attributes setting.
+FvAlignment        = 8        # FV alignment and FV attributes setting.
 ERASE_POLARITY     = 1
 MEMORY_MAPPED      = TRUE
 STICKY_WRITE       = TRUE
@@ -131,7 +131,7 @@ READ_LOCK_STATUS   = TRUE
 # BSP drivers
 !include Platform/Qualcomm/sm6150/dxe.fdf.inc
 
-  INF Silicon/Qualcomm/QcomPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
+  #INF Silicon/Qualcomm/QcomPkg/Drivers/SimpleFbDxe/SimpleFbDxe.inf
 
   #
   # Helper drivers
@@ -143,6 +143,8 @@ READ_LOCK_STATUS   = TRUE
   #
   INF MdeModulePkg/Bus/Usb/UsbBusDxe/UsbBusDxe.inf
   INF MdeModulePkg/Bus/Usb/UsbMouseDxe/UsbMouseDxe.inf
+  INF MdeModulePkg/Bus/Usb/UsbMouseAbsolutePointerDxe/UsbMouseAbsolutePointerDxe.inf
+  INF MdeModulePkg/Bus/Usb/UsbKbDxe/UsbKbDxe.inf
   INF MdeModulePkg/Bus/Usb/UsbMassStorageDxe/UsbMassStorageDxe.inf
 
   #
@@ -209,10 +211,10 @@ READ_LOCK_STATUS   = TRUE
 
   INF src/kernelfdt/KernelFdtDxe.inf
 
-!if $(AB_SLOTS_SUPPORT) == TRUE
+#!if $(AB_SLOTS_SUPPORT) == TRUE
   INF GPLDrivers/Drivers/BootSlotDxe/BootSlotDxe.inf
   INF GPLDrivers/Application/SwitchSlotsApp/SwitchSlotsApp.inf
-!endif
+#!endif
 
 !if $(ENABLE_LINUX_UTILS) == 1
   FILE FREEFORM = 4b0364cf-1c5b-47aa-9073-d7b5039ce49b {
@@ -251,20 +253,30 @@ READ_LOCK_STATUS   = TRUE
       SECTION FV_IMAGE = FVMAIN
     }
   }
-  
-FILE FREEFORM = 25462CDA-221F-471F-AC1D-259CFAF4E326 {
-  SECTION RAW = Platform/Xiaomi/sm6150/RawFiles/Panel_shenchao_nt36672a_fhd_video.xml
-  SECTION UI = "Panel_shenchao_nt36672a_fhd_video.xml"
-}
 
-FILE FREEFORM = 25462CDA-221F-471F-AC1D-259C0AA4E326 {
+FILE FREEFORM = 45FE4B7C-150C-45DA-A021-4BEB2048EC6F {
   SECTION RAW = Platform/Xiaomi/sm6150/RawFiles/QcomChargerCfg.cfg
   SECTION UI = "QcomChargerCfg.cfg"
 }
 
-FILE FREEFORM = 25462CDA-221F-47DF-AC1D-259CFA24E326 {
+FILE FREEFORM = 21E9BDD9-6C3F-4F10-84A5-BBEC322741F1 {
+  SECTION RAW = Platform/Xiaomi/sm6150/RawFiles/uefipil.cfg
+  SECTION UI = "uefipil.cfg"
+}  
+
+FILE FREEFORM = DDE58710-41CD-4306-DBFB-3FA90BB1D2DD {
   SECTION RAW = Platform/Xiaomi/sm6150/RawFiles/uefiplat.cfg
   SECTION UI = "uefiplat.cfg"
+}
+
+FILE FREEFORM = A1E235DE-E825-4591-9623-C43175811826 {
+    SECTION UI = "SecParti.cfg"
+    SECTION RAW = Platform/Xiaomi/sm6150/RawFiles/SecParti.cfg
+}
+
+FILE FREEFORM = 2fd6672f-f3f4-4fb7-b454-a86fa9f780b0 {
+  SECTION RAW = Platform/Xiaomi/sm6150/startup.nsh
+  SECTION UI  = "startup.nsh"
 }
 
 !include Silicon/Qualcomm/QcomPkg/QcomCommonFdf.inc
